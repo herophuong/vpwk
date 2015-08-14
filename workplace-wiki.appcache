@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# v0.0.69
+dist/main.min.js
+dist/main.min.css
+dist/img/favicon.png
+dist/img/logo.png
+dist/index.json
+index.html
+
+NETWORK:
+*

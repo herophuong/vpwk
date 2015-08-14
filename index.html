@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="workplaceWiki" manifest="workplace-wiki.appcache">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>Văn phòng Toàn thư</title>
+
+    <!-- CSS & fonts -->
+    <link rel="stylesheet" href="dist/main.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,400italic&amp;subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    
+    <!-- Script -->
+    <script src="dist/main.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="dist/img/favicon.png">
+
+</head>
+<body ng-controller="appController">
+    <div id="wrap">
+
+        <!-- Navigation -->
+        <nav id="nav">
+            <div id="nav-list">
+                <a href="#">Trang chủ</a>
+
+                <!-- Nav pages -->
+                <a href="/#!/favorite" title="Ưa thích">Ưa thích</a>
+                <a href="/#!/about" title="Giới thiệu về Văn phòng Toàn thư">Giới thiệu</a>
+            </div>
+
+            <!-- Nav footer -->
+            <footer>
+                <span>Đã cập nhật ngày ...</span>
+                <!-- Footer -->
+                <div>@2015 - The Workplace Wiki</div>
+            </footer>
+        </nav>
+
+        <!-- Icon menu -->
+        <a href="#" id="nav-menu">
+            <div id="menu"></div>
+        </a>
+
+        <!-- Header -->
+        <header id="header">
+            <a href="/">
+                <img src="dist/img/logo.png" alt="VPTT Logo">
+                <h1>Văn phòng Toàn thư</h1>
+            </a>
+        </header>
+
+        <!-- Main content -->
+        <div id="container">
+            <main>
+                <!-- Posts -->
+                <div id="posts">
+                    <div ng-repeat="post in posts._array" class="post">
+                        <h2><a href="#">{{ post.title }}</a></h2>
+                        <time class="by-line">Cập nhật {{ post.updated | date:'HH:mm dd-MM-yyyy' }}</time>
+                        <div class="content">
+                            <div class="question" ng-bind-html="post.question">
+                            </div>
+                            <div class="answer" ng-bind-html="post.answer">
+                            </div>
+                        </div>
+                        <div class="action">
+                            
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Pagination links -->
+            <div class="pagination">
+                <span class="page-item">&laquo;</span>
+                <span class="page-item">1</span>
+                <a href="#" class="page-item">2</a>
+                <a href="#" class="page-item">&raquo;</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
